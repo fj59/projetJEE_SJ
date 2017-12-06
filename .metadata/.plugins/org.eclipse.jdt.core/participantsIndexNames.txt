@@ -1,0 +1,5 @@
+INDEX VERSION 1.127
+Z:\utilisateur\Documents\workspace\projetJEE_SJ\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\1502531317.index
+\ProjetEJB\ejbModule
+Z:\utilisateur\Documents\workspace\projetJEE_SJ\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\1868472654.index
+\ProjetWeb\src
