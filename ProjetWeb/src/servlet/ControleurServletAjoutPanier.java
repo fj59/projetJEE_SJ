@@ -13,6 +13,11 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import EJB.AccesProduitEJBRemote;
+import access.Produit;
+import gestion.ItemPanier;
+import gestion.Panier;
+
 
 
 
@@ -22,6 +27,7 @@ public class ControleurServletAjoutPanier extends HttpServlet {
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
+	
 	Panier panier=new Panier();
 	  public ControleurServletAjoutPanier() {
 	        super();

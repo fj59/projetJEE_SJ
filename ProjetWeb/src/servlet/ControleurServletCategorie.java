@@ -14,6 +14,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import EJB.AccesCatalogueEJBRemote;
+import access.Categorie;
+
 
 @WebServlet("/ControleurCategorie")
 public class ControleurServletCategorie extends HttpServlet {
