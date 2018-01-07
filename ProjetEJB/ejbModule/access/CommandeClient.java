@@ -23,20 +23,22 @@ public class CommandeClient implements Serializable  {
 	 */
 	private static final long serialVersionUID = 1L;
 	@Id
+	@Column(name="id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
-	@Column
+	
+	@Column(name="montant")
 	private Float montant;
 
-	
-	@Column
+
+	@Column(name="date_creation")
 	private String date_creation;
-	@Column
-	private Integer no_confirmation;
 	
-	@ManyToOne(fetch=FetchType.LAZY)
+	@Column(name="no_confirmation")
+	private Integer no_confirmation;
+
+	@ManyToOne(targetEntity = Client.class)
 	@JoinColumn(name="client_id")
-	@Column
 	private Integer client_id;
 	
 	

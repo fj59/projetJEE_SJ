@@ -1,7 +1,6 @@
 package access;
 
 import java.io.Serializable;
-import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -23,44 +22,65 @@ public class Produit implements Serializable  {
 	 */
 	private static final long serialVersionUID = 1L;
 	@Id
+	@Column(name="id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
-	
-	@Column
+
+	@Column(name="nom")
 	private String nom;
-	
-	@Column
+
+	@Column(name="prix")
 	private Float prix;
-	
-	@Column
+
+	@Column(name="description")
 	private String description;
-	
-	@Column
+
+	@Column(name="dernier_maj")
 	private String derniere_maj;
 	
 	@ManyToOne(fetch=FetchType.LAZY)
 	@JoinColumn(name="categorie_id")
-	private Integer categorie_id;
+	private Categorie categorie;
 	
 	
 
     @OneToMany(mappedBy="produit")
-    List<ProduitCommande> produitCommande;
+    ProduitCommande produitCommande;
 	
+	public String getDerniere_maj() {
+		return derniere_maj;
+	}
+
+	public void setDerniere_maj(String derniere_maj) {
+		this.derniere_maj = derniere_maj;
+	}
+
+	public Categorie getCategorie() {
+		return categorie;
+	}
+
+	public void setCategorie(Categorie categorie) {
+		this.categorie = categorie;
+	}
+
+	public ProduitCommande getProduitCommande() {
+		return produitCommande;
+	}
+
+	public void setProduitCommande(ProduitCommande produitCommande) {
+		this.produitCommande = produitCommande;
+	}
+
+	public static long getSerialversionuid() {
+		return serialVersionUID;
+	}
+
 	public String getNom() {
 		return nom;
 	}
 
 	public void setNom(String nom) {
 		this.nom = nom;
-	}
-
-	public Integer getCategorieId() {
-		return categorie_id;
-	}
-
-	public void setCategorieId(Integer categorieId) {
-		this.categorie_id = categorieId;
 	}
 
 	public String getDerniereMaj() {

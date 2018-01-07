@@ -6,6 +6,7 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
@@ -20,19 +21,23 @@ public class ProduitCommande implements Serializable  {
 	 */
 	private static final long serialVersionUID = 1L;
 	
-	
 
 	@Id
+	@Column(name="commande_client_id")
+	@GeneratedValue(strategy = GenerationType.IDENTITY )
+	private int commande_client_id;
+	
+	
+
 	@ManyToOne(fetch=FetchType.LAZY)
 	@JoinColumn(name="produit_id")
 	private int produitId;
 
-	@Id
 	@ManyToOne(fetch=FetchType.LAZY)
 	@JoinColumn(name="commande_client_id")
 	private int commandeClientId;
 	
-	@Column
+	@Column(name="quantité")
 	private int quantite;
 	
 	

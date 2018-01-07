@@ -1,21 +1,14 @@
 package gestion;
 
-public class FacadeAbstraite {
+import java.util.List;
 
-	public void insert()
+public abstract class FacadeAbstraite {
+	public void insertEntity()
 	{
 		
 	}
-	public void delete()
+	public List select()
 	{
-		
-	}
-	public void update()
-	{
-		
-	}
-	public void select()
-	{
-		
+		return null;
 	}
 }
