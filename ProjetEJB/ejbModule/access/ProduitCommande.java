@@ -12,7 +12,7 @@ import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
-@Table(schema="catalogue", name="produitcommande")
+@Table(schema="catalogue", name="produit_commande")
 public class ProduitCommande implements Serializable  {
 
 	/**
@@ -24,12 +24,12 @@ public class ProduitCommande implements Serializable  {
 
 	@Id
 	@ManyToOne(fetch=FetchType.LAZY)
-	@JoinColumn(name="produitId")
+	@JoinColumn(name="produit_id")
 	private int produitId;
 
 	@Id
 	@ManyToOne(fetch=FetchType.LAZY)
-	@JoinColumn(name="commandeClientId")
+	@JoinColumn(name="commande_client_id")
 	private int commandeClientId;
 	
 	@Column

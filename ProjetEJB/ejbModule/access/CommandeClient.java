@@ -15,7 +15,7 @@ import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
-@Table(schema="catalogue", name="commandeclient")
+@Table(schema="catalogue", name="commande_client")
 public class CommandeClient implements Serializable  {
 
 	/**
@@ -26,22 +26,22 @@ public class CommandeClient implements Serializable  {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
 	@Column
-	private String nom;
+	private Float montant;
+
+	
+	@Column
+	private String date_creation;
+	@Column
+	private Integer no_confirmation;
 	
 	@ManyToOne(fetch=FetchType.LAZY)
-	@JoinColumn(name="categorieId")
-	private Integer categorieId;
-	
+	@JoinColumn(name="client_id")
 	@Column
-	private String derniereMaj;
-	@Column
-	private String description;
-	@Column
-	private Float prix;
+	private Integer client_id;
 	
 	
 
-    @OneToMany(mappedBy="produit")
+    @OneToMany(mappedBy="commande_client")
     List<ProduitCommande> produitCommande;
 	
 }

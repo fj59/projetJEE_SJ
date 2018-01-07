@@ -25,19 +25,22 @@ public class Produit implements Serializable  {
 	@Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
+	
 	@Column
 	private String nom;
 	
-	@ManyToOne(fetch=FetchType.LAZY)
-	@JoinColumn(name="categorieId")
-	private Integer categorieId;
-	
-	@Column
-	private String derniereMaj;
-	@Column
-	private String description;
 	@Column
 	private Float prix;
+	
+	@Column
+	private String description;
+	
+	@Column
+	private String derniere_maj;
+	
+	@ManyToOne(fetch=FetchType.LAZY)
+	@JoinColumn(name="categorie_id")
+	private Integer categorie_id;
 	
 	
 
@@ -53,19 +56,19 @@ public class Produit implements Serializable  {
 	}
 
 	public Integer getCategorieId() {
-		return categorieId;
+		return categorie_id;
 	}
 
 	public void setCategorieId(Integer categorieId) {
-		this.categorieId = categorieId;
+		this.categorie_id = categorieId;
 	}
 
 	public String getDerniereMaj() {
-		return derniereMaj;
+		return derniere_maj;
 	}
 
 	public void setDerniereMaj(String derniereMaj) {
-		this.derniereMaj = derniereMaj;
+		this.derniere_maj = derniereMaj;
 	}
 
 	public String getDescription() {
