@@ -10,7 +10,7 @@ import access.ProduitCommande;
 
 @Stateless(mappedName = "PanierJNDI")
 public class AccesPanierEJB implements AccesPanierEJBRemote,AccesPanierEJBLocal{
-	@PersistenceContext(unitName="managePanier")
+	@PersistenceContext(unitName="manageCatalogue")
 	EntityManager em;
     public AccesPanierEJB() {
     }

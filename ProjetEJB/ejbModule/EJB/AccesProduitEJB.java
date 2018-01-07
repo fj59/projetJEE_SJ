@@ -17,7 +17,7 @@ import access.Produit;
 
 @Stateless(mappedName = "ProduitJNDI")
 public class AccesProduitEJB implements AccesProduitEJBRemote,AccesProduitEJBLocal{
-	@PersistenceContext(unitName="manageProduit")
+	@PersistenceContext(unitName="manageCatalogue")
 	EntityManager em;
     public AccesProduitEJB() {
     }
